@@ -1,0 +1,62 @@
+
+body {
+   
+    background: linear-gradient(to top, #0a35f3, #5ca3f5) no-repeat;
+}
+
+.card_creation {
+    border: 3px solid black;
+    border-radius: 4px;
+
+    background-color:rgba(58, 48, 48, 0.699);
+    background-size: 100%;
+    color: white;
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 10%;
+
+
+}
+.card-title{
+    text-align: center;
+}
+textarea{
+    resize: none;
+
+}
+.popoverClass{
+    color: white;
+    text-align: center;
+    margin-bottom: 4%;
+}
+
+.popoverClass:hover{
+    color: grey;
+    text-decoration: none;
+
+
+}
+.card{
+    background-color:rgba(58, 48, 48, 0.699);
+    margin-left: 4%;
+}
+.btn{
+    background-color: black;
+    color: white;
+    margin-top: 5%;
+}
+.card-img-top{
+    width: 100%;
+    height: 150px;
+}
+.card-img-top{
+    margin-top: 10%;
+}
+.needs-validation{
+    display: block;
+}

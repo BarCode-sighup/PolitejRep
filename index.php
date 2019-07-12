@@ -37,7 +37,7 @@ $result = mysqli_query($link, $query);
 </head>
 <body>
 
-<div class=" card_creation col-md-8">
+<div class=" card_creation col-sm-10 ">
     <div class="card-body">
         <h1 class="card-title">Конфигурация</h1>
 
@@ -121,6 +121,26 @@ $result = mysqli_query($link, $query);
                     </div>
                 <?php }?>
             </div>
+            <div class="form-group">
+                <h5>Добавление фото и видео в категории:</h5>
+                <select class="custom-select" name="select" style="margin-bottom: 2%;"  required>
+
+                    <option value="">Выберите категорию, в которую вы хотите добавить контент</option>
+                    <?php
+                    $query = 'SELECT * FROM kategorii';
+                    $result = mysqli_query($link, $query);
+                    while($arResult = mysqli_fetch_array($result)) { //mysqli_fetch_array возвращает следующую строчку, пока не достигнет конца результата
+
+                    ?>
+                    <option value="<?php echo "$arResult[0]" ?>"><?php echo "$arResult[1]" ?></option>
+                    <?php }?>
+                </select>
+                <div class="custom-file">
+
+                    <input type="file" class="custom-file-input" id="validatedCustomFile" name="fhotoVideo" required>
+                    <label class="custom-file-label" for="validatedCustomFile">Выберите фото или видео</label>
+                    <div class="invalid-feedback">Example invalid custom file feedback</div>
+                </div>
 
             <div>
                 <button class="btn " type="submit" name="SoDefaultButton" value="VseOk">Подтвердить</button>

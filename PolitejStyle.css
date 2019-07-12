@@ -44,6 +44,7 @@ textarea{
 .card{
     background-color:rgba(58, 48, 48, 0.699);
     margin-left: 4%;
+    margin-bottom: 5%;
 }
 .btn{
     background-color: black;
@@ -56,7 +57,20 @@ textarea{
 }
 .card-img-top{
     margin-top: 10%;
+
 }
 .needs-validation{
     display: block;
+}
+.card:focus{
+    border: 5px solid red;
+}
+.hidden{
+
+}
+.open{
+    border: 0px solid red;
+}
+.open1{
+    border: 2px solid red;
 }

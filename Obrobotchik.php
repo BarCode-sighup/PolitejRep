@@ -1,5 +1,5 @@
 <?php
-$errorStatus = 'http://178.35.152.24/dashboard/index.php?';
+$errorStatus = 'http://178.35.152.24/index.php?';
 
 if (isset($_POST["SoDefaultButton"])){
 
@@ -29,7 +29,7 @@ if (isset($_POST["SoDefaultButton"])){
 //echo "</pre>";
 
 
-if ($errorStatus==='http://178.35.152.24/dashboard/index.php?name=0&gridRadios=0&file=0&'){
+if ($errorStatus==='http://178.35.152.24/index.php?name=0&gridRadios=0&file=0&'){
 
 $link = mysqli_connect(
 'localhost', //Сервер
@@ -49,7 +49,7 @@ mysqli_close($link);
 
 
 $name = basename($_FILES["file"]["name"]);
-move_uploaded_file($_FILES["file"]["tmp_name"], "C:\\\\xampp\\\\htdocs\\\\dashboard\\\\Images\\\\$name");
+move_uploaded_file($_FILES["file"]["tmp_name"], "C:\\\\xampp\\\\htdocs\\\\Images\\\\$name");
 $FileDestinatin="http:\\\\\\\\178.35.152.24\\\\Images\\\\$name";
 //Составить запрос
 $query = "INSERT INTO kategorii SET name='{$_POST['name']}', gridRadios='{$_POST['gridRadios']}', file='$FileDestinatin'"; //users заменить на имя таблицы, к которой хочется обратиться

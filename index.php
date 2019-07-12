@@ -32,9 +32,8 @@ $result = mysqli_query($link, $query);
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="PolitejStyle.css">
-   
 
-    <script type="text/javascript" src="script.js"></script>
+
 </head>
 <body>
 
@@ -53,22 +52,22 @@ $result = mysqli_query($link, $query);
 
               
                 
-                    <div class="form-check col-sm-4">
+                    <div class="form-check col-sm-12">
                         <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
                         <label class="form-check-label" for="gridRadios1">
-                            <a  class="popoverClass" data-placement="bottom"  data-toggle="popover" data-img="https://pp.userapi.com/c858128/v858128130/b903/j300OBW5qcU.jpg" title="Пример расположения слева" >С левой стороны</a>
+                            <a  class="popoverClass" data-placement="right"  data-toggle="popover" data-img="https://pp.userapi.com/c858128/v858128130/b903/j300OBW5qcU.jpg" title="Пример расположения слева" >С левой стороны</a>
                         </label>
                     </div>
-                    <div class="form-check col-sm-4">
+                    <div class="form-check col-sm-12">
                         <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
                         <label class="form-check-label" for="gridRadios2">
-                            <a  class="popoverClass " data-placement="bottom"  data-toggle="popover" data-img="https://pp.userapi.com/c855536/v855536651/8766e/16au3ENVE_Y.jpg" title="Пример расположения снизу" >С нижней стороны</a>
+                            <a  class="popoverClass " data-placement="right"  data-toggle="popover" data-img="https://pp.userapi.com/c852124/v852124783/1719c5/hee3OiwohOg.jpg" title="Пример расположения с обоих сторон" >С обоих сторон</a>
                         </label>
                     </div>
-                    <div class="form-check col-sm-4">
+                    <div class="form-check col-sm-12">
                         <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
                         <label class="form-check-label" for="gridRadios3">
-                           <a  class="popoverClass " data-placement="bottom"  data-toggle="popover" data-img="https://pp.userapi.com/c858128/v858128130/b90b/Xfe193ZriQs.jpg" title="Пример расположения справа" >С правой стороны</a>
+                           <a  class="popoverClass " data-placement="right"  data-toggle="popover" data-img="https://pp.userapi.com/c858128/v858128130/b90b/Xfe193ZriQs.jpg" title="Пример расположения справа" >С правой стороны</a>
 
                         </label>
                     </div>
@@ -87,14 +86,15 @@ $result = mysqli_query($link, $query);
 
 
                         <div class="form-group col-sm-12 ">
-                            <label for="exampleFormControlFile1" >Че нить загрузите</label>
-                            <input type="file" class="form-control-file file1" id="exampleFormControlFile1" accept="image/jpeg,image/png" name="file">
+                            <label for="exampleFormControlFile1" ></label>
+                            <input type="file" class="form-control-file file1" id="exampleFormControlFile1" accept="image/jpeg,image/png" name="file" required>
                         </div>
 
 
                 </div>
             <div class="col-md-8 mb-3">
                 <label for="validationTooltip01">Название категории:</label>
+                <p>Выберите название для своей категории, которое будет отоброжаться под картинокй</p>
                 <input type="text" class="form-control" id="validationTooltip01" placeholder="Животные" name="name" required>
 
 
@@ -111,7 +111,7 @@ $result = mysqli_query($link, $query);
                 while($arResult = mysqli_fetch_array($result)) { //mysqli_fetch_array возвращает следующую строчку, пока не достигнет конца результата
 
                     ?>
-                    <div class="card col-sm-3" style="width: 18rem;">
+                    <div class="card col-sm-3 hidden" style="width: 18rem;">
                         <img src="<?php echo "$arResult[2]" ?>" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo "$arResult[1]" ?></h5>
@@ -155,6 +155,19 @@ $result = mysqli_query($link, $query);
             title: 'Toolbox'
         })
     });
+    </script>
+<script>
+    $('.hidden').on('click',function(){
+        var c = $(this).attr('class');
+        if(c === "card col-sm-3 hidden"){
+            $(this).attr('class','card col-sm-3 open1');
+        }
+        else{
+            $(this).attr('class','card col-sm-3 hidden')
+        }
+
+    });
+
 </script>
 </body>
 
